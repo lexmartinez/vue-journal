@@ -1,28 +1,29 @@
 <template>
   <div class="entries">
-    <h1>Entries</h1>
     <div v-if="entries.length > 0" class="table-wrap">
-      <div>
-        <router-link v-bind:to="{ name: 'NewEntry' }" class="add_entry_link">Add Entry</router-link>
+      <div style="float:right">
+        <v-btn to="/new" color="blue-grey darken-2" dark>Add Entry</v-btn>
+        <br/><br/>
       </div>
-      <table>
-        <tr>
-          <td>Date</td>
-          <td width="550">Description</td>
-          <td width="100" align="center">Action</td>
-        </tr>
-        <tr v-for="entry in entries">
-          <td>{{ entry.date }}</td>
-          <td><vue-markdown>{{ entry.content }}</vue-markdown></td>
+      <v-data-table
+        v-bind:headers="headers"
+        :items="entries"
+        hide-actions
+        class="elevation-1">
+
+        <template slot="items" slot-scope="props">
+          <td>{{ props.item.date | moment("DD/MM/YYYY")}}</td>
+          <td><br/><vue-markdown :anchorAttributes="{target: '_blank'}">{{ props.item.content }}</vue-markdown></td>
           <td align="center">
-            <router-link v-bind:to="{ name: 'EditEntry', params: { id: entry._id } }">Edit</router-link>
+            <v-btn :to="`/${props.item._id}`" color="blue-grey darken-2" dark>Edit</v-btn>
           </td>
-        </tr>
-      </table>
+        </template>
+
+      </v-data-table>
     </div>
-    <div v-else>
+    <div v-else style="width: 500px; margin-top:200px; text-align: center">
       There are no entries.. Lets add one now <br /><br />
-      <router-link v-bind:to="{ name: 'NewEntry' }" class="add_entry_link">Add Entry</router-link>
+      <v-btn to="/new" color="blue-grey darken-2" dark>Add Entry</v-btn>
     </div>
   </div>
 </template>
@@ -38,7 +39,26 @@
     },
     data () {
       return {
-        entries: []
+        entries: [],
+        headers: [
+          {
+            text: 'Date',
+            align: 'left',
+            sortable: true,
+            value: 'date'
+          },
+          {
+            text: 'Content',
+            value: 'content',
+            sorteable: false,
+            align: 'center'
+          },
+          {
+            text: '',
+            value: '_.id',
+            sorteable: false
+          }
+        ]
       }
     },
     mounted () {
@@ -52,38 +72,3 @@
     }
   }
 </script>
-<style type="text/css">
-  .table-wrap {
-    width: 60%;
-    margin: 0 auto;
-    text-align: center;
-  }
-  table th, table tr {
-    text-align: left;
-  }
-  table thead {
-    background: #f2f2f2;
-  }
-  table tr td {
-    padding: 10px;
-  }
-  table tr:nth-child(odd) {
-    background: #f2f2f2;
-  }
-  table tr:nth-child(1) {
-    background: #4d7ef7;
-    color: #fff;
-  }
-  a {
-    color: #4d7ef7;
-    text-decoration: none;
-  }
-  a.add_entry_link {
-    background: #4d7ef7;
-    color: #fff;
-    padding: 10px 80px;
-    text-transform: uppercase;
-    font-size: 12px;
-    font-weight: bold;
-  }
-</style>

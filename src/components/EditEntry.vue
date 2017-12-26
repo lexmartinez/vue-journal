@@ -1,12 +1,17 @@
 <template>
-  <div class="entries">
-    <h1>Edit Entry</h1>
+  <div class="entries" style="margin-top: 70px">
+    <h1>Edit Entry</h1><br/>
     <div class="form">
       <div>
-        <textarea rows="15" cols="15" placeholder="CONTENT" v-model="content"></textarea>
+        <v-text-field
+          name="input-7-1"
+          label="Content"
+          multi-line
+          rows="12"
+          v-model="content"></v-text-field>
       </div>
       <div>
-        <button class="app_entry_btn" @click="updateEntry">Update</button>
+        <v-btn color="blue-grey darken-2" dark @click="updateEntry" style="width: 500px">Update</v-btn>
       </div>
     </div>
   </div>
@@ -41,26 +46,3 @@
     }
   }
 </script>
-<style type="text/css">
-  .form input, .form textarea {
-    width: 500px;
-    padding: 10px;
-    border: 1px solid #e0dede;
-    outline: none;
-    font-size: 12px;
-  }
-  .form div {
-    margin: 20px;
-  }
-  .app_entry_btn {
-    background: #4d7ef7;
-    color: #fff;
-    padding: 10px 80px;
-    text-transform: uppercase;
-    font-size: 12px;
-    font-weight: bold;
-    width: 520px;
-    border: none;
-    cursor: pointer;
-  }
-</style>

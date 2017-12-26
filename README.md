@@ -2,7 +2,7 @@
 
 :notebook: A simple journal full-stack App to track you [#100DaysOfCode](http://100daysofcode.com/) challenge progress
 
-> Day 1 of #100DaysOfCode Challenge
+> Day 0 of #100DaysOfCode Challenge
 
 ## Build Setup
 
@@ -17,6 +17,10 @@ $ npm run start
 $ cd server && npm run start
 
 ```
+
+## Screenshot
+
+![](https://github.com/lexmartinez/vue-journal/raw/master/static/screenshot.png)
 
 ## License
 

@@ -1,0 +1,25 @@
+# vue-journal
+
+A simple journal full-stack App to track you [#100DaysOfCode](http://100daysofcode.com/) challenge progress
+
+> Day 1 of #100DaysOfCode Challenge
+
+## Build Setup
+
+``` bash
+# install dependencies
+npm install
+
+# serve with hot reload at localhost:8080
+npm run dev
+
+# build for production with minification
+npm run build
+
+# build for production and view the bundle analyzer report
+npm run build --report
+```
+
+## License
+
+This project is licensed under MIT License - see the [LICENSE.md](https://github.com/lexmartinez/vue-journal/blob/master/LICENSE.md) file for details

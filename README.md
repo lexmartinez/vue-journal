@@ -3,6 +3,7 @@
 :notebook: A simple journal full-stack App to track your [#100DaysOfCode](http://100daysofcode.com/) challenge progress
 
 > Day 0 of #100DaysOfCode Challenge
+
 > Day 1 of #100DaysOfCode Challenge - Improvements
 
 ## Build Setup

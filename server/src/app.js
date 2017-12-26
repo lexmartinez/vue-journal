@@ -8,7 +8,7 @@ const _ = require('lodash')
 const Entry = require('./models/entry')
 const prefix = '/entries'
 const app = express()
-app.use(morgan('combined'));
+app.use(morgan('combined'))
 app.use(bodyParser.json())
 app.use(cors())
 

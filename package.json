@@ -1,6 +1,6 @@
 {
   "name": "vue-journal",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "A simple journal full-stack App to track you #100DaysOfCode challenge progress",
   "author": "Lex Martinez <lex0316@gmail.com>",
   "repository": {
@@ -21,7 +21,9 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "axios": "^0.17.1",
     "vue": "^2.5.2",
+    "vue-markdown": "^2.2.4",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {

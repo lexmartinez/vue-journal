@@ -1,6 +1,6 @@
 # vue-journal
 
-A simple journal full-stack App to track you [#100DaysOfCode](http://100daysofcode.com/) challenge progress
+:notebook: A simple journal full-stack App to track you [#100DaysOfCode](http://100daysofcode.com/) challenge progress
 
 > Day 1 of #100DaysOfCode Challenge
 
@@ -8,16 +8,14 @@ A simple journal full-stack App to track you [#100DaysOfCode](http://100daysofco
 
 ``` bash
 # install dependencies
-npm install
+$ npm install
 
-# serve with hot reload at localhost:8080
-npm run dev
+# serve client with hot reload at localhost:8080
+$ npm run start
 
-# build for production with minification
-npm run build
+# serve backend with hot reload at localhost:8081
+$ cd server &amp;&amp; npm run start
 
-# build for production and view the bundle analyzer report
-npm run build --report
 ```
 
 ## License

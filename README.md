@@ -14,7 +14,7 @@ $ npm install
 $ npm run start
 
 # serve backend with hot reload at localhost:8081
-$ cd server &amp;&amp; npm run start
+$ cd server && npm run start
 
 ```
 

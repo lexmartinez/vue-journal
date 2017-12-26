@@ -18,14 +18,18 @@
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "lint": "eslint --ext .js,.vue src",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "local": "concurrently \"npm start\" \"cd server && npm start\" \"open -a 'Google Chrome' 'http://localhost:8080'\""
   },
   "dependencies": {
     "axios": "^0.17.1",
+    "concurrently": "^3.5.1",
     "vue": "^2.5.2",
+    "vue-clipboard2": "0.0.8",
     "vue-markdown": "^2.2.4",
     "vue-moment": "^3.1.0",
     "vue-router": "^3.0.1",
+    "vue-social-sharing": "^2.3.3",
     "vuetify": "^0.17.5"
   },
   "devDependencies": {

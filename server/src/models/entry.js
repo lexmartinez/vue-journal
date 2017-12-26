@@ -5,7 +5,11 @@ const Schema = mongoose.Schema
 
 const EntrySchema = new Schema({
   date: Date,
-  content: String
+  progress: String,
+  description: String,
+  project: String,
+  repoName: String,
+  repoUrl: String
 })
 
 const Entry = mongoose.model('Entry', EntrySchema)

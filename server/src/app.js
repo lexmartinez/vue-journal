@@ -22,10 +22,13 @@ app.get(prefix, (req, res) => {
 })
 
 app.post(prefix, (req, res) => {
-  var content = req.body.content
-  var entry = new Entry({
+  const entry = new Entry({
     date: new Date(),
-    content
+    description: req.body.description,
+    progress: req.body.progress,
+    project: req.body.project,
+    repoName: req.body.repoName,
+    repoUrl: req.body.repoUrl
   })
 
   entry.save((error) => {
@@ -40,16 +43,20 @@ app.post(prefix, (req, res) => {
 })
 
 app.get(prefix + '/:id', (req, res) => {
-  Entry.findById(req.params.id, 'date content', (error, entry) => {
+  Entry.findById(req.params.id, 'date progress description project repoName repoUrl', (error, entry) => {
     if (error) { console.error(error) }
     res.send(entry)
   })
 })
 
 app.put(prefix + '/:id', (req, res) => {
-  Entry.findById(req.params.id, 'date content', (error, entry) => {
+  Entry.findById(req.params.id, 'date progress description project repoName repoUrl', (error, entry) => {
     if (error) { console.error(error) }
-    entry.content = req.body.content
+    entry.description = req.body.description
+    entry.progress = req.body.progress
+    entry.project = req.body.project
+    entry.repoName = req.body.repoName
+    entry.repoUrl = req.body.repoUrl
     entry.save(function (error) {
       if (error) {
         console.log(error)

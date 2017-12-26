@@ -20,7 +20,7 @@ $ cd server && npm run start
 
 ## Screenshot
 
-![](https://github.com/lexmartinez/vue-journal/raw/master/static/screenshot.png)
+![](https://github.com/lexmartinez/vue-journal/raw/master/static/screenshot-1.png)
 
 ## License
 

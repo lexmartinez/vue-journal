@@ -24,7 +24,7 @@
             <v-btn :to="`/${props.item._id}`" color="blue-grey darken-2" dark fab small><v-icon>edit</v-icon></v-btn>
 
             <social-sharing :url="props.item.repoUrl"
-                            :title="`Day ${props.index} of #100DaysOfCode Challenge: ${props.item.progress}`"
+                            :title="`Day ${props.index} of #100DaysOfCode Challenge - ${props.item.progress}`"
                             inline-template>
 
               <network network="twitter">
